@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Star, Heart, Clock, ShoppingCart } from "lucide-react";
-import { type DesignWithCreator } from "@shared/schema";
+import { type DesignWithCreator } from "@/lib/types";
 import { Badge } from "@/components/ui/badge";
 import { motion } from "framer-motion";
 
@@ -18,14 +18,14 @@ export function DesignCard({ design }: DesignCardProps) {
         <div className="h-full flex flex-col bg-card rounded-2xl overflow-hidden border border-border/50 shadow-md hover:shadow-xl hover:border-primary/20 transition-all duration-300">
           {/* Image Container */}
           <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-            <img 
-              src={design.image} 
+            <img
+              src={design.image}
               alt={design.title}
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            
+
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             {/* Badges */}
             <div className="absolute top-3 left-3 flex flex-col gap-2">
               {design.badge && (
@@ -63,7 +63,7 @@ export function DesignCard({ design }: DesignCardProps) {
                 by <span className="text-foreground font-medium">{design.creator.user.name}</span>
               </span>
             </div>
-            
+
             <div className="h-px bg-border/50 my-1" />
 
             {/* Stats Footer */}
